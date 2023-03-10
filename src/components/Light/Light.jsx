@@ -1,8 +1,7 @@
 import React, {useState} from "react";
 import './style.css';
-import lightOffPic from './light-off.svg'
-import lightOnPic from './light-on.svg'
-
+import lightOffPic from './images/light-off.svg'
+import lightOnPic from './images/light-on.svg'
 
 export const Light = ({roomName, state}) => {
 
