@@ -43,96 +43,97 @@ Tentokrát **nebudeš** vytvářet aplikaci úplně od začátku pomocí `create
 Tvým cílem je vytvořit jednoduchý ovládací panel, u kterého budeme předstírat, že ovládá chytrou domácnost.
 
 1. Prozkoumej složku `html-vzor`:
-	- všimni si, že není uvnitř složky `src`, takže na naši aplikaci nemá žádný vliv
-	- v této složce máš nakodóvaný HTML a CSS vzor výsledné stránky
-	- je na tobě, aby jsi toto HTML a CSS rozsekala na kousky, ze kterých uděláš jednotlivé komponenty a dáš je na správná místa
-	- součástí je i složka `images`, kde jsou všechny potřebné obrázky - ty také rozmísti k jednotlivým komponentám, které je budou potřebovat
-	- obrázky v jednotlivých komponentách importuj do proměnných a pak se na ně odkazuj pomocí těchto proměnných
+    - všimni si, že není uvnitř složky `src`, takže na naši aplikaci nemá žádný vliv
+    - v této složce máš nakodóvaný HTML a CSS vzor výsledné stránky
+    - je na tobě, aby jsi toto HTML a CSS rozsekala na kousky, ze kterých uděláš jednotlivé komponenty a dáš je na správná místa
+    - součástí je i složka `images`, kde jsou všechny potřebné obrázky - ty také rozmísti k jednotlivým komponentám, které je budou potřebovat
+    - obrázky v jednotlivých komponentách importuj do proměnných a pak se na ně odkazuj pomocí těchto proměnných
 
-1. Prozkoumej složku `src`:
-	- všimni si, že máš připravenou úplně prádnou aplikaci
-	- ve složce `src` je soubor `smartHomeData.js`, který obsahuje všechny potřebné údaje o naší chytré domácnosti uložené do objektu `smartHomeData`. Tento objekt se ze souboru exportuje, takže ho můžeš importovat do místa, kde ho budeš potřebovat (hlavní `index.jsx`). Podívej se, jako mají data o domácnosti strukturu.
+2. Prozkoumej složku `src`:
+    - všimni si, že máš připravenou úplně prádnou aplikaci
+    - ve složce `src` je soubor `smartHomeData.js`, který obsahuje všechny potřebné údaje o naší chytré domácnosti uložené do objektu `smartHomeData`. Tento objekt se ze souboru exportuje, takže ho můžeš importovat do místa, kde ho budeš potřebovat (hlavní `index.jsx`). Podívej se, jako mají data o domácnosti strukturu.
 
-1. Do výchozího kódu aplikace v `index.jsx` přidej:
-	```jsx
-	<div class="container">
-	</div>
-	```
+3. Do výchozího kódu aplikace v `index.jsx` přidej:
+    ```jsx
+    <div class="container">
+    </div>
+    ```
 
-	Do tohoto divu umístíš dvě komponenty `<Header />` a `<Dashboard />`, až je vytvoříš.
+    Do tohoto divu umístíš dvě komponenty `<Header />` a `<Dashboard />`, až je vytvoříš.
 
-1. Vytvoř samostatnou komponentu `Header`, která bude obsahovat jednoduchý kód ze vzorového HTML. Komponentě přidej prop `title`, kterou do komponenty půjde poslat obsah nadpisu. Ve vzorovém HTML je to `'Chytrý dům'`. Komponentu naimportuj a vlož do kontejneru v hlavní aplikaci.
+4. Vytvoř samostatnou komponentu `Header`, která bude obsahovat jednoduchý kód ze vzorového HTML. Komponentě přidej prop `title`, kterou do komponenty půjde poslat obsah nadpisu. Ve vzorovém HTML je to `'Chytrý dům'`. Komponentu naimportuj a vlož do kontejneru v hlavní aplikaci.
 
-1. Vytvoř samostatnou komponentu `Dashboard`, která bude obsahovat řídící panel. Komponentu naimportuj a vlož do kontejneru v hlavní aplikaci.
+5. Vytvoř samostatnou komponentu `Dashboard`, která bude obsahovat řídící panel. Komponentu naimportuj a vlož do kontejneru v hlavní aplikaci.
 
-	V komponentě `Dashboard` bude následující HTML:
-	```jsx
-	<main class="dashboard">
-	</main>
-	```
+    V komponentě `Dashboard` bude následující HTML:
+    ```jsx
+    <main class="dashboard">
+    </main>
+    ```
 
-	Jednotlivé části ovládacího panelu budou opět samostatné komponenty, které budeš vkládat do této značky `Main`.
+    Jednotlivé části ovládacího panelu budou opět samostatné komponenty, které budeš vkládat do této značky `Main`.
 
-	Rozložení komponent uvnitř dashboardu bude vypadat následovně:
-	![Rozložení komponent](rozlozeni-komponent.jpg)
+    Rozložení komponent uvnitř dashboardu bude vypadat následovně:
+    ![Rozložení komponent](rozlozeni-komponent.jpg)
 
-1. V hlavním `index.jsx` si naimportuj do proměnné data o chytré domácnosti ze souboru `smartHomeData.js`. Tato data předej jako prop s názvem `data` do komponenty `Dashboard`.
+6. V hlavním `index.jsx` si naimportuj do proměnné data o chytré domácnosti ze souboru `smartHomeData.js`. Tato data předej jako prop s názvem `data` do komponenty `Dashboard`.
 
-	Části tohoto objektu budeš později posílat jako props do příslušných komponent, které budou data potřebovat.
+    Části tohoto objektu budeš později posílat jako props do příslušných komponent, které budou data potřebovat.
 
-1. Vytvoř komponentu `Lights` (množné číslo, půjde o skupinu všech světel), přidej ji prop `lights` do které se bude z komponenty `Dashboard` předávat pole světel, která v domácnosti máme.
+7. Vytvoř komponentu `Lights` (množné číslo, půjde o skupinu všech světel), přidej ji prop `lights` do které se bude z komponenty `Dashboard` předávat pole světel, která v domácnosti máme.
 
-	Uvnitř komponenty toho pole přemapuješ na seznam komponent `Light`, které budou zobrazovat jednotlivá světla.
+    Uvnitř komponenty toho pole přemapuješ na seznam komponent `Light`, které budou zobrazovat jednotlivá světla.
 
-1. Vytvoř komponentu `Light` (jednotné číslo, půjde o komponentu pro zobrazení jednoho světla).
+8. Vytvoř komponentu `Light` (jednotné číslo, půjde o komponentu pro zobrazení jednoho světla).
 
-	![komponenta Light](ukazka-light.png)
+    ![komponenta Light](ukazka-light.png)
 
-	Komponenta bude přijímat props `name` (název místnosti, kde světlo je) a `state` (stav světla - `'on'` nebo `'off'`).
+    Komponenta bude přijímat props `name` (název místnosti, kde světlo je) a `state` (stav světla - `'on'` nebo `'off'`).
 
-	Do komponenty si naimportuj oba obrázky pro rozvícenou a zhasnutou žárovku.
+    Do komponenty si naimportuj oba obrázky pro rozvícenou a zhasnutou žárovku.
 
-	V komponentě vytvoř stavovou proměnnou (pomocí `useState`) do které jako výchozí hodnotu ulož hodnotu prop `state`.
 
-	Na `<div class="light">` uvnitř komponenty přidej událost `onClick` a do komponenty přidej funkci, která bude na kliknutí reagovat.
+    V komponentě vytvoř stavovou proměnnou (pomocí `useState`) do které jako výchozí hodnotu ulož hodnotu prop `state`.
 
-	Ve funkci měň hodnotu stavové proměnné (kterou sis vytvořila pomocí `useState` o několik řádků výše) z `'on'` na `'off'` a obráceně.
+    Na `<div class="light">` uvnitř komponenty přidej událost `onClick` a do komponenty přidej funkci, která bude na kliknutí reagovat.
 
-	Podle hodnoty této stavové proměnné zobraz buď zhasnutou nebo rozsvícenou žárovku.
+    Ve funkci měň hodnotu stavové proměnné (kterou sis vytvořila pomocí `useState` o několik řádků výše) z `'on'` na `'off'` a obráceně.
 
-	Klikáním na komponentu by mělo jít světlo rozvěcet a zhasínat.
+    Podle hodnoty této stavové proměnné zobraz buď zhasnutou nebo rozsvícenou žárovku.
 
-	Až se ti toto povede, zbytek úkolu už pro tebe bude hračka, protože všechyn komponenty budou docela podobné.
+    Klikáním na komponentu by mělo jít světlo rozvěcet a zhasínat.
 
-1. Vytvoř komponentu `Climate`, která bude mít props `temperature` (teplota v domácnosti) a `humidity` (vlhkost vzduchu). Komponentu naimportuj a použij uvnitř komponenty `Dashboard` a předej do ní z dashboardu příslušná data.
+    Až se ti toto povede, zbytek úkolu už pro tebe bude hračka, protože všechyn komponenty budou docela podobné.
 
-	![komponenta Climate](ukazka-climate.png)
+10. Vytvoř komponentu `Climate`, která bude mít props `temperature` (teplota v domácnosti) a `humidity` (vlhkost vzduchu). Komponentu naimportuj a použij uvnitř komponenty `Dashboard` a předej do ní z dashboardu příslušná data.
 
-	V komponentě si vytvoř stavovou proměnnou pro teplotu a jako výchozí hodnotu do ní předej hodnotu prop `temperature`.
+     ![komponenta Climate](ukazka-climate.png)
 
-	V komponentě jsou dvě tlačítka pro zvýšení a snížení teploty. Přidej na obě událost `onClick` a do komponenty dopiš funkce, které budou zvyšovat nebo snižovat hodnotu stavové proměnné o 1 stupeň.
+     V komponentě si vytvoř stavovou proměnnou pro teplotu a jako výchozí hodnotu do ní předej hodnotu prop `temperature`.
 
-	Hodnotu stavové proměnné zobrazuj v komponentě jako nastavenou teplotu.
+     V komponentě jsou dvě tlačítka pro zvýšení a snížení teploty. Přidej na obě událost `onClick` a do komponenty dopiš funkce, které budou zvyšovat nebo snižovat hodnotu stavové proměnné o 1 stupeň.
 
-1. Vytvoř komponentu `Blinds`, která bude mít jednu prop nazvanou `state` ve které může být hodnota `'open'` (otevřené žaluzie) nebo `'closed'` (zavřené žaluzie). Komponentu naimportuj a použij uvnitř komponenty `Dashboard` a předej do ní z dashboardu údaj o stavu žaluzií.
+     Hodnotu stavové proměnné zobrazuj v komponentě jako nastavenou teplotu.
 
-	![komponenta Blinds](ukazka-blinds.png)
+11. Vytvoř komponentu `Blinds`, která bude mít jednu prop nazvanou `state` ve které může být hodnota `'open'` (otevřené žaluzie) nebo `'closed'` (zavřené žaluzie). Komponentu naimportuj a použij uvnitř komponenty `Dashboard` a předej do ní z dashboardu údaj o stavu žaluzií.
 
-	V komponentě si vytvoř stavovou proměnnou pro stav žaluzií a jako výchozí hodnotu do ní předej hodnotu prop `state`.
+     ![komponenta Blinds](ukazka-blinds.png)
 
-	V komponentě jsou dvě tlačítka pro zavření o otevření žaluzií. Přidej na obě událost `onClick` a do komponenty dopiš funkce, které podle stisknutého tlačítka nastaví hodnotu stavové proměnné na `'open'` nebo `'closed'`.
+     V komponentě si vytvoř stavovou proměnnou pro stav žaluzií a jako výchozí hodnotu do ní předej hodnotu prop `state`.
 
-	Do komponenty si naimportuj oba obrázky pro otevřené a zavřené žaluzie. Podle hodnoty stavové proměnné zobraz příslušnou ikonku.
+     V komponentě jsou dvě tlačítka pro zavření o otevření žaluzií. Přidej na obě událost `onClick` a do komponenty dopiš funkce, které podle stisknutého tlačítka nastaví hodnotu stavové proměnné na `'open'` nebo `'closed'`.
 
-	Podle hodnoty stavové proměnné také přidej třídu `button--active` na příslušné tlačítko. Obě tlačítka budou mít za každé situace svou základní CSS tříbu `button`. Když budou žaluzie otevřené, bude mít první tlačítko *Otevřít* na sobě navíc ještě třídu `button--active`. To stejné pro zavřené žaluzie u druhého tlačítka.
+     Do komponenty si naimportuj oba obrázky pro otevřené a zavřené žaluzie. Podle hodnoty stavové proměnné zobraz příslušnou ikonku.
 
-	Kromě změny ikonky se tedy bude vždy modře zvýrazňovat i příslušné tlačítko.
+     Podle hodnoty stavové proměnné také přidej třídu `button--active` na příslušné tlačítko. Obě tlačítka budou mít za každé situace svou základní CSS tříbu `button`. Když budou žaluzie otevřené, bude mít první tlačítko *Otevřít* na sobě navíc ještě třídu `button--active`. To stejné pro zavřené žaluzie u druhého tlačítka.
 
-1. Vytvoř komponentu `Energy`, která bude mít props `electricity` a `water`, ve kterých se bude předávat měsíční spotřeba naší domácnosti.
+     Kromě změny ikonky se tedy bude vždy modře zvýrazňovat i příslušné tlačítko.
 
-	![komponenta Energy](ukazka-energy.png)
+12. Vytvoř komponentu `Energy`, která bude mít props `electricity` a `water`, ve kterých se bude předávat měsíční spotřeba naší domácnosti.
 
-	Tato komponenta data jen zobrazuje, na nic se zde nekliká. Jen hodnoty z props zobraz v HTML a komponentu naimportuj a použij v komponentě `Dashboard`.
+     ![komponenta Energy](ukazka-energy.png)
+
+     Tato komponenta data jen zobrazuje, na nic se zde nekliká. Jen hodnoty z props zobraz v HTML a komponentu naimportuj a použij v komponentě `Dashboard`.
 
 
 ## Odevzdání úkolu
