@@ -3,7 +3,7 @@ import './style.css';
 import lightOffPic from './images/light-off.svg'
 import lightOnPic from './images/light-on.svg'
 
-export const Light = ({roomName, state}) => {
+const Light = ({roomName, state}) => {
 
     const [svetlo, setSvetlo] = useState(state);
 
@@ -22,3 +22,5 @@ export const Light = ({roomName, state}) => {
         </div>
     )
 }
+
+export default Light;

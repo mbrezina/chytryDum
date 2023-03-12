@@ -1,13 +1,13 @@
 import React from 'react';
 import {createRoot} from 'react-dom/client';
 import './style.css';
-import {Header} from "./components/Header";
-import {Dashboard} from "./components/Dashboard";
-import {smartHomeData} from "./smartHomeData";
+import Header from "./components/Header";
+import Dashboard from "./components/Dashboard";
+import smartHomeData from "./smartHomeData";
 
 const App = () => {
 
-    console.log({smartHomeData});
+    console.log(smartHomeData);
 
     return (
         <div id="app" className="container">

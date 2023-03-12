@@ -3,7 +3,7 @@ import './style.css';
 import blindsOpen from './images/blinds-open.svg'
 import blindsClosed from './images/blinds-closed.svg'
 
-export const Blinds = ({state}) => {
+const Blinds = ({state}) => {
 
     const [otevreno, setOtevreno] = useState(state);
 
@@ -35,3 +35,5 @@ export const Blinds = ({state}) => {
 
     )
 }
+
+export default Blinds;

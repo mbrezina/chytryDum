@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import './style.css';
 import temp from './images/temp.svg'
 
-export const Climate = ({temperature, humidity}) => {
+const Climate = ({temperature, humidity}) => {
 
     const [teplota, setTeplota] = useState(temperature);
 
@@ -30,3 +30,5 @@ export const Climate = ({temperature, humidity}) => {
         </div>
     )
 }
+
+export default Climate;

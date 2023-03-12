@@ -1,8 +1,8 @@
 import React from "react";
 import './style.css';
-import {Light} from "../Light/Light";
+import Light from "../Light/Light";
 
-export const Lights = ({lights}) => {
+const Lights = ({lights}) => {
     return (
         <div className="lights">
             {
@@ -18,3 +18,4 @@ export const Lights = ({lights}) => {
     );
 };
 
+export default Lights;

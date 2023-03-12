@@ -3,7 +3,7 @@ import './style.css';
 import electricityPic from './images/electricity.svg'
 import waterPic from './images/water.svg'
 
-export const Energy = ({electricity, water}) => {
+const Energy = ({electricity, water}) => {
     return (
         <div className="energy">
             <div className="energy__source">
@@ -27,3 +27,5 @@ export const Energy = ({electricity, water}) => {
         </div>
     )
 }
+
+export default Energy;
