@@ -7,12 +7,10 @@ import smartHomeData from "./smartHomeData";
 
 const App = () => {
 
-    console.log(smartHomeData);
-
     return (
         <div id="app" className="container">
             <Header title="Chytrý dům"/>
-            <Dashboard data={smartHomeData}/>
+            <Dashboard {...smartHomeData}/>
         </div>
     );
 };

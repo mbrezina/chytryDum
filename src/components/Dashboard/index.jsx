@@ -5,11 +5,7 @@ import Climate from "../Climate";
 import Blinds from "../Blinds"
 import Energy from "../Energy";
 
-//const Dashboard = ({data}) => {
 const Dashboard = ({lights, climate, blinds, energyConsumption}) => {
-
-    console.log(lights);  // undefined
-    console.log(climate);  // undefined
 
     return (
         <main className="dashboard">
